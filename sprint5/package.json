@@ -4,24 +4,30 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx src/controller-fastify.ts",
+    "start": "node dist/controller.js",
+    "build": "tsc",
+    "tsnode": "ts-node src/controller.ts",
+    "prisma:migrate": "npx prisma migrate dev --name init_tasks",
+    "prisma:generate": "npx prisma generate",
+    "prisma:studio": "npx prisma studio"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "@types/node": "^24.10.1",
-    "@types/pg": "^8.15.6",
-    "prisma": "^7.1.0",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
-  },
   "dependencies": {
-    "@prisma/adapter-pg": "^7.1.0",
-    "@prisma/client": "^7.1.0",
-    "@types/express": "^5.0.6",
-    "dotenv": "^17.2.3",
-    "pg": "^8.16.3"
+    "@prisma/adapter-better-sqlite3": "^7.1.0",
+    "@prisma/client": "7.0.0",
+    "fastify": "5.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.12",
+    "@types/pg": "^8.15.6",
+    "dotenv": "^17.2.1",
+    "prisma": "7.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "5.8.2"
   }
 }
